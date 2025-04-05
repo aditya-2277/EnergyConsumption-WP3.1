@@ -25,7 +25,7 @@ class TrainingServicer(train_model_pb2_grpc.TrainingServicer):
             model = LinearRegression()
             model.fit(independentVariables.values, dependentVariable)
 
-            joblib.dump(model,"model.pkl")
+            joblib.dump(model,"../data/model.pkl")
             return train_model_pb2.TrainResponse(status="Training Completed!!")
         except Exception as e:
             return train_model_pb2.TrainResponse(status=f"Error:{str(e)}")

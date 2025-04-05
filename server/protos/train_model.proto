@@ -1,8 +1,13 @@
 syntax = "proto3";
 
 //import energy databroker to use TrainRequest
-import 'energy_databroker.proto';
+//import 'energy_databroker.proto';
 
+
+//Define the message to hold file path for training
+message TrainRequest {
+  string csv_file_path = 1;
+}
 
 //Define the message to hold the status of training
 message TrainResponse {

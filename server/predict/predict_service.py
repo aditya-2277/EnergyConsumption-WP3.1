@@ -10,7 +10,7 @@ import predict_energy_pb2_grpc
 class PredictServicer(predict_energy_pb2_grpc.PredictServicer):
     def predictconsumption(self, request, context):
         try:
-            model = joblib.load("model.pkl")
+            model = joblib.load("../data/model.pkl")
             buildingType = 1
             dayOfWeek = 1
             if request.BuildingType == "Residential":

@@ -2,10 +2,11 @@ import grpc
 from concurrent import futures
 import energy_databroker_pb2
 import energy_databroker_pb2_grpc
+import os
 
 class DatabrokerServicer(energy_databroker_pb2_grpc.DatabrokerServicer):
     def energydatabroker(self, request, context):
-        path_to_csv = "data/train_energy_data.csv"
+        path_to_csv = "../data/train_energy_data.csv"
         return energy_databroker_pb2.TrainRequest(csv_file_path=path_to_csv)
 
 def serve():
@@ -15,6 +16,7 @@ def serve():
     server.add_insecure_port("[::]:" + port)
     server.start()
     print("Databroker Service is running on port: " + port)
+    print("Current Path: " + os.getcwd())
     server.wait_for_termination()
 
 if __name__ == "__main__":
