@@ -1,0 +1,1 @@
+{"docker_info_list":[{"container_name":"energy-databroker1","ip_address":"energy-databroker1","port":"8556"},{"container_name":"energy-training1","ip_address":"energy-training1","port":"8556"},{"container_name":"energy-prediction1","ip_address":"energy-prediction1","port":"8556"},{"container_name":"orchestrator","ip_address":"orchestrator","port":"8061"}]}

@@ -1,0 +1,25 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: energy-prediction1
+  labels:
+    app: energy-prediction1
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: energy-prediction1
+  template:
+    metadata:
+      labels:
+        app: energy-prediction1
+    spec:
+      containers:
+      - name: energy-prediction1
+        image: docker.io/aditya2277/energy-prediction:latest
+        ports:
+        - name: protobuf-api
+          containerPort: 8061
+        - name: webui
+          containerPort: 8062

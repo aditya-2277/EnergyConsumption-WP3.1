@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+//Empty message for databroker
+message Empty {
+
+}
+
+//Define the message to hold file path for training
+message TrainRequest {
+  string csv_file_path = 1;
+}
+
+//Define the databroker service
+service Databroker {
+    rpc energydatabroker(Empty) returns (TrainRequest);
+}
